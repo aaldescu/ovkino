@@ -1,2 +1,2 @@
 # ovkino
-Extract and Calendar view with playtimes of movies in Original Version (OV) in Frankfurt Cinemas
+Extract and Calendar View of Original Version (OV) movies playtime in Frankfurt Cinemas
