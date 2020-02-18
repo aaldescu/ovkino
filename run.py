@@ -7,6 +7,7 @@ import re
 import time
 import datetime
 
+print("Start search....")
 
 #connect to DB
 db=sqlite3.connect('ovkino.db')
@@ -29,7 +30,8 @@ for link in movies:
     print ("\nURL: " + movie_page_url)
     playtime_html = urlopen(movie_page_url).read()
     timepage_soup = BeautifulSoup(playtime_html,'html.parser')
-    kinos = timepage_soup.select('a[title*="Kinoprogramm, aktueller Spielplan alle Filme."]');
+    kinos = timepage_soup.select('.KinoProgram > h2')
+    
     for kino in kinos:
         time_table = kino.findNext("table")
         i = 0
@@ -77,4 +79,4 @@ for link in movies:
     
     print ("\n\n")
         
-
+print("End search....")
